@@ -7,7 +7,6 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 - `skills/<name>/SKILL.md` is one skill. Supporting files sit next to it in `references/` (prompts, templates, rubrics loaded on demand), `playbooks/` (step lists a skill routes to), and `scripts/` (executable tools).
 - `skills/principle-*/` are single-rule principle skills. `skills/poteto-mode/SKILL.md` indexes them and routes tasks to its playbooks.
 - `agents/*.md` are subagent definitions. `poteto-agent` wraps `poteto-mode`, and `comment-sicko` is spawned by the `no-comments` skill.
-- `skills/poteto-mode/scripts/` is the only code package (Bun + TypeScript). It holds `orch` and `watch-pr`.
 
 ## Editing skills
 
