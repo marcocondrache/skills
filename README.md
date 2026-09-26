@@ -1,6 +1,6 @@
 # Skills
 
-**Skills** is my personal collection of agent skills, subagents, and rules for high-quality engineering work. Plain Markdown that works with any harness that loads skills.
+My personal collection of agent skills, subagents, and rules for high-quality engineering work. Plain Markdown that works with any harness that loads skills.
 
 Started from **[pstack](https://github.com/cursor/plugins)**.
 
