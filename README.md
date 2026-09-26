@@ -12,20 +12,9 @@ Started from **[pstack](https://github.com/cursor/plugins)**.
 
 ### ✦ What it is not
 
-- A framework with its own runtime
+- A framework or a plugin with its own runtime
 - A mirror of pstack kept in sync with upstream
 - Tied to one harness, editor, or model
-
-### ✦ Install
-
-In Claude Code, add this repo as a plugin marketplace and install the plugin.
-
-```
-/plugin marketplace add marcocondrache/skills
-/plugin install marco@marcocondrache
-```
-
-Skills load namespaced under the plugin, so `router` becomes `/marco:router`. Other harnesses can copy `skills/` and `agents/` into their own skills and agents directories.
 
 ### ✦ Why not pstack
 
