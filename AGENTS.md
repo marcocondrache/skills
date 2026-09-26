@@ -21,6 +21,6 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 ## Customizing away from pstack
 
 - Changing or deleting inherited content is expected. Don't add compatibility shims or keep a skill alive only because pstack has it.
-- Much of the inherited text assumes Cursor. Examples include the `Task` and `AskQuestion` tool names, `~/.cursor/rules`, the `cursor-team-kit` plugin, Cursor's built-in `create-skill`, and model ids like `grok-4.7-xhigh-fast`. Find them with `rg -n 'cursor|Cursor|AskQuestion|grok'`. Don't treat them as requirements when adapting a skill to another harness.
+- Keep every skill harness-agnostic. Don't name one harness's tools, paths, plugins, config files, or model ids. Describe the capability instead ("spawn a subagent", "ask the user", "your strongest model", "the project's skills directory").
 - When you rename or remove a skill, principle, or playbook, update its entry in `skills/router/SKILL.md` and any agent that points at it in the same change.
 - Keep `LICENSE` intact. It is MIT and carries both copyright lines.
