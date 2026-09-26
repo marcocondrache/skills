@@ -15,7 +15,6 @@ Match the task to a playbook below, open its file, and follow it. The rules in t
 - **Prose.** Every prose surface follows the **unslop** skill, your reply included. Write it clean as you draft, because a cleanup pass afterward misses the patterns. Docs, RFCs, and readmes also follow the **technical-writing** skill. PR and commit text follows `playbooks/opening-a-pr.md` instead. Agent-facing prose also follows `playbooks/authoring-a-skill.md`.
 - **Comments.** Keep a code comment only for a non-obvious why. Test and verify scripts get no step-narrating comments, because the assertion or log string names the step. This holds for every file, delegate diffs included.
 - **Verification.** Verify UI, IDE, and CLI work on the real surface with the project's verification skill (`verify-<app>`). If it has none, drive the surface directly and note the gap.
-- **Throughput.** Nontrivial multi-step work writes the throughput checkpoint from `playbooks/feature.md` step 3.
 - **Broken skills.** Fix a skill that breaks mid-task in its own PR. Don't block on it, and don't silently work around it.
 
 ## Autonomy
@@ -81,23 +80,9 @@ When no playbook fits, work without one.
 |---|---|
 | Read-only question. How does X work, why is Y built this way, are we sure about Z, X or Y | `playbooks/investigation.md` |
 | A reported defect to reproduce, root-cause, and fix | `playbooks/bug-fix.md` |
-| A one-off slowness to fix against a measured baseline | `playbooks/perf-issue.md` |
-| Sustained improvement of one metric against a target | `playbooks/hillclimb.md` |
-| Diagnose a live runtime symptom (leak, idle CPU, glitch) without fixing it | `playbooks/runtime-forensics.md` |
-| Diagnose a captured profile, trace, spindump, or heap snapshot without fixing it | `playbooks/trace-forensics.md` |
+| A slowness to fix against a measured baseline | `playbooks/perf-issue.md` |
 | New or changed behavior | `playbooks/feature.md` |
 | A behavior-preserving structure change (rename, extract, inline, dedupe, move) | `playbooks/refactoring.md` |
 | A throwaway sketch to settle a design or empirical fork ("prototype", "mock it up", "try this layout") | `playbooks/prototype.md` |
-| Pixel-exact UI parity, or migrating a styling system | `playbooks/visual-parity.md` |
 | Writing or editing a skill | `playbooks/authoring-a-skill.md` |
-| Testing how a skill, structure, or prompt change affects agent behavior | `playbooks/eval.md` |
-| Any PR-status request ("check on X", "babysit this", "get it green", "address the review-bot comments"), or a review bot commented. Use it over any babysit skill built into the harness. Opening a PR alone never triggers it | `playbooks/babysit.md` |
-| Landing or shipping a green stack | `playbooks/shipping.md` |
-| A long task driven to done without stopping ("run until done", "/loop until X") | `playbooks/autonomous-run.md` |
-| A queue of independent PRs run to merged, one owner per PR ("autopilot this queue", "full autopilot") | `playbooks/autopilot-full.md` |
-| A queue built into one linear stack the operator lands ("autopilot-stack", "stack them, don't ship") | `playbooks/autopilot-stack.md` |
-| Resuming a prior agent's in-flight work from a transcript, session URL, or pushed branch | `playbooks/session-pickup.md` |
-| Suspending work so it can resume (explicit pause, going offline, harness restart, compaction) | `playbooks/pause-safely.md` |
-| Work that spans phases or stacked PRs | `playbooks/multi-phase-plan.md` |
-| Reclaiming disk from stale worktrees and simulators ("clean up worktrees", "free up space") | `playbooks/worktree-cleanup.md` |
 | The end of every other playbook | `playbooks/opening-a-pr.md` |

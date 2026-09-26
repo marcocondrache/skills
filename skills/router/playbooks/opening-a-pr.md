@@ -8,7 +8,7 @@ Invoked at the end of every other playbook.
 
 **PRs.** Before commit, re-read the diff and strip slop per the **unslop** skill (prose) and the **no-comments** skill (comments). Run `/no-comments` before review. Write every PR title, PR description, and commit body per the **unslop** skill and the rules below. Skip the **technical-writing** skill for them. Write the real symbol, file, flag, or command name instead of a description of it. Use one word for each action, keep articles, and avoid `-ing` when a plain verb works.
 
-**Titles.** Use Conventional Commits in the form `type(scope): subject`. Use `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, or `perf` as the type. Use the changed area, such as `router` or `unslop`, as the scope. Keep the subject short and imperative. Name a real symbol when one carries the change. For example, `fix(router): retarget opening-a-pr babysit trigger`. Do not add a trailing period.
+**Titles.** Use Conventional Commits in the form `type(scope): subject`. Use `feat`, `fix`, `docs`, `refactor`, `test`, `chore`, or `perf` as the type. Use the changed area, such as `router` or `unslop`, as the scope. Keep the subject short and imperative. Name a real symbol when one carries the change. For example, `fix(router): link playbooks by relative path`. Do not add a trailing period.
 
 **Descriptions.** Write the PR body as plain prose, the way you would explain the change to a colleague. Use one to three sentences that say why the change exists. Add a sentence on a decision only when a reviewer would otherwise ask about it. Do not use headings, bullets, bold, tables, or checklists. Do not restate the diff, list files or SHAs, or paste verification logs. The squash commit body is the PR body, and a commit body does not restate its subject.
 
@@ -18,6 +18,6 @@ Invoked at the end of every other playbook.
 
 **Readiness.** Open every PR ready, never as a draft. With `gh`, omit `--draft`. Some harness PR tools default to draft, so set `draft: false` on every PR creation call. If a PR still opens as a draft, run `gh pr ready <number>`. Run `gh pr view <number>` before you refer to PR status.
 
-**Babysit.** Opening a PR does not start a babysit. Post the URL and keep building. Finish the phase or stack first. Run a separate babysit pass only when the user asks for one after the whole stack exists. A babysit for each new PR stalls the build and spends checks on commits that later waves restart. Push back when feedback drifts from intent.
+**After opening.** Post the URL and keep building. Opening a PR does not start watching it. Push back when review feedback drifts from intent.
 
-A subagent that opens a PR runs `interrogate`, strips slop from the diff, runs `/no-comments`, and posts the URL. Then it returns to the parent without babysitting, unless it is an Autopilot-full or Autopilot-stack owner. That owner's brief assigns the babysit loop and is the ask `playbooks/babysit.md` waits for. The owner starts the loop after its code-ready report and reports merge-ready or STACK-READY as its playbook says. The rules here and in `playbooks/babysit.md` that hold babysitting until a whole stack is built do not apply to that owner.
+A subagent that opens a PR strips slop from the diff, runs `/no-comments`, posts the URL, and returns to the parent.
