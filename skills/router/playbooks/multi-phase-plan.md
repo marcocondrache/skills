@@ -149,7 +149,7 @@ Each live lane runs in its own environment at the PR head, a cloud VM when the h
 
 ## Appendix D. Links and reading list
 
-<Docs to read before editing. Which PRs get `skills/how/SKILL.md` and `skills/interrogate/SKILL.md`. The trail per `skills/show-me-your-work/SKILL.md`.>
+<Docs to read before editing. Which PRs get `skills/how/SKILL.md` and `skills/interrogate/SKILL.md`.>
 ````
 
 **Reply:** the plan path, the PR ids with their dependencies and the review-gated set, and what the prototypes proved and what stays unproven.

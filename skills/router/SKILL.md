@@ -32,7 +32,7 @@ Match the task to a playbook below, open its file, and follow it. The rules in t
 
 ## Subagents
 
-Spawn `router-agent` for every subagent inside a playbook step. Workflow skills (`how`, `why`, `interrogate`, `reflect`, `swarm`) pick their own subagents and models, so don't override them.
+Spawn `router-agent` for every subagent inside a playbook step. Workflow skills (`how`, `why`, `interrogate`, `swarm`) pick their own subagents and models, so don't override them.
 
 Run subagents in the background with write and MCP access, and pass file pointers instead of inlined context. Pick the model by role. Prose, judgment, and the hardest code (cross-cutting design, concurrency, subtle algorithms) go to your strongest model, even when the steps are fully specified. Mechanical code and trivial edits go to a fast model. When the harness can't pick a model per subagent, the subagent runs on the parent model.
 
@@ -75,7 +75,7 @@ Each principle is a leaf skill. Read it in full before you apply it.
 
 Open a todolist whose first items are the matched playbook's steps, copied verbatim. A step you skip stays in the list as `skip: <reason>`.
 
-Large or cross-cutting work (a migration across many call sites, an ambitious multi-part change) and work the user steps away from go to the **figure-it-out** skill, even when a narrower playbook fits. So does a task no playbook fits.
+When no playbook fits, work without one.
 
 | Task | Playbook |
 |---|---|
