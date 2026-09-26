@@ -31,6 +31,8 @@ Keep exploring until you can describe the full picture without hand-waving. If y
 
 ## Output
 
+If your brief asks only where things live, return just the files and symbols that matter, one line each on why, and skip the structure below.
+
 Return your findings in this structure. Be factual and specific. Reference exact file paths, function names, type names, and line numbers where relevant.
 
 ### Components Found

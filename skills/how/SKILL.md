@@ -12,9 +12,13 @@ Answer "how does X work?" at the level a senior engineer needs to start working 
 
 1. Scope the question. If it's ambiguous, state your reading and go on. The user can redirect.
 2. Read the code yourself. Find the entry point (a user action, an API call, a job), follow the call chain function by function, and read the core types. Note where the area meets the rest of the codebase and anything a newcomer would get wrong. Read the implementation instead of guessing from names. If you can't trace a part, say so.
-3. Write the explanation in the format below.
+3. Write the explanation in the format below. Skip this step when `how` runs as part of a change, such as a playbook step before a design or a fix. There you need the understanding, not a write-up.
 
-For a subsystem too big to read in one pass (many files across services, or a cross-cutting feature), split it into 2 to 4 distinct slices first. Spawn one read-only explorer per slice on a fast model, all in one message, each with the prompt in `references/explorer-prompt.md`. Then write the explanation yourself from their findings, and check the code where they overlap or disagree.
+## Big areas
+
+When you answer a question about a subsystem too big to read in one pass (many files across services, or a cross-cutting feature), split it into 2 to 4 distinct slices. Spawn one read-only explorer per slice on a fast model, all in one message, each with the prompt in `references/explorer-prompt.md`. Then write the explanation yourself from their findings, and check the code where they overlap or disagree.
+
+When `how` runs as part of a change, don't send explorers to explain the code, because you will read the core files yourself to design or fix it anyway. Send them only when the area is too big to know where to look, and ask each for the files and symbols that matter in its slice. Then read those files yourself.
 
 ## Output format
 
