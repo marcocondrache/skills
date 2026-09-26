@@ -14,7 +14,7 @@ Match the task to a playbook below, open its file, and follow it. The rules in t
 - **Code.** Name the data shape before writing logic, and pick its structure per **principle-model-the-domain**.
 - **Prose.** Every prose surface follows the **unslop** skill, your reply included. Write it clean as you draft, because a cleanup pass afterward misses the patterns. Docs, RFCs, and readmes also follow the **technical-writing** skill. PR and commit text follows `playbooks/opening-a-pr.md` instead. Agent-facing prose also follows `playbooks/authoring-a-skill.md`.
 - **Comments.** Keep a code comment only for a non-obvious why. Test and verify scripts get no step-narrating comments, because the assertion or log string names the step. This holds for every file, delegate diffs included.
-- **Verification.** Verify UI, IDE, and CLI work on the real surface with the project's verification skill (`verify-<app>`, made by the **create-verification-skill** skill). If none exists, drive the surface directly and note the gap.
+- **Verification.** Verify UI, IDE, and CLI work on the real surface with the project's verification skill (`verify-<app>`). If it has none, drive the surface directly and note the gap.
 - **Throughput.** Nontrivial multi-step work writes the throughput checkpoint from `playbooks/feature.md` step 3.
 - **Broken skills.** Fix a skill that breaks mid-task in its own PR. Don't block on it, and don't silently work around it.
 
