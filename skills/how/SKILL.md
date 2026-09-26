@@ -6,41 +6,24 @@ disable-model-invocation: true
 
 # How
 
-Explore the codebase to answer "how does X work?" questions. Produce architectural explanations at the level of a senior engineer onboarding onto a subsystem, enough to build a working mental model, not so much that it reads like annotated source code.
+Answer "how does X work?" at the level a senior engineer needs to start working in the area. Give them a working mental model, not annotated source.
 
-Every spawn below is a read-only general-purpose subagent. When the harness can't pick a model per subagent, it runs on the parent model.
+## Steps
 
-## Step 1. Assess Complexity
+1. Scope the question. If it's ambiguous, state your reading and go on. The user can redirect.
+2. Read the code yourself. Find the entry point (a user action, an API call, a job), follow the call chain function by function, and read the core types. Note where the area meets the rest of the codebase and anything a newcomer would get wrong. Read the implementation instead of guessing from names. If you can't trace a part, say so.
+3. Write the explanation in the format below.
 
-If the scope is ambiguous, state your interpretation and explore. The user can redirect.
+For a subsystem too big to read in one pass (many files across services, or a cross-cutting feature), split it into 2 to 4 distinct slices first. Spawn one read-only explorer per slice on a fast model, all in one message, each with the prompt in `references/explorer-prompt.md`. Then write the explanation yourself from their findings, and check the code where they overlap or disagree.
 
-- **Simple** (a single module, a small utility, a narrow question such as "how does function X work"): no explorers. One explainer explores and explains in a single pass. Go to Step 2b.
-- **Complex** (a subsystem spanning multiple files or services, a cross-cutting feature, a full architectural overview): spawn parallel explorers first, then hand off to the explainer. Go to Step 2a.
+## Output format
 
-When in doubt, take the simple path.
+Drop any section that doesn't apply.
 
-## Step 2a. Explore (complex questions only)
+- **Overview.** One or two paragraphs on what it is, what it does, and why it exists. A reader should be able to stop here.
+- **Key concepts.** The types, services, or abstractions the rest depends on, one line each.
+- **How it works.** The longest section. What triggers the flow, what happens step by step, where data goes, and where it branches. Use prose that names real files and functions, not pseudocode or large code blocks. Add a mermaid or ASCII diagram only when components talk to each other or data changes shape across stages.
+- **Where things live.** The files and directories someone needs to start working here.
+- **Gotchas.** Surprising behavior, historical leftovers, and pitfalls.
 
-Decompose the question into 2 to 4 exploration angles, each a distinct slice of the subsystem. Spawn all explorers in a single message, each on a fast model.
-
-Each explorer gets the prompt in `references/explorer-prompt.md` with its angle filled in. Then go to Step 3.
-
-## Step 2b. Direct Explain (simple questions)
-
-Spawn one subagent on your strongest model that explores and explains in one pass.
-
-Build its prompt from `references/explainer-prompt.md` without the explorer-findings section. Go to Step 4.
-
-## Step 3. Synthesize (complex questions only)
-
-Once all explorers have returned, spawn one subagent on your strongest model to synthesize their findings into one explanation.
-
-Build its prompt from `references/explainer-prompt.md` with every explorer's findings filled in.
-
-## Step 4. Present
-
-Present the explainer's output to the user. Light edits for clarity or context from the conversation are fine. Do not substantially rewrite it.
-
-## Output Format
-
-The explanation uses the sections defined in `references/explainer-prompt.md`, dropping any that do not apply: Overview, Key Concepts, How It Works, Where Things Live, Gotchas.
+Write concretely. "`UserService` calls `AuthClient.refresh()`" beats "the service delegates to the client". Name open questions instead of papering over them.
