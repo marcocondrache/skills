@@ -7,7 +7,7 @@ Started from **[pstack](https://github.com/cursor/plugins)**.
 ### ✦ What it is
 
 - A set of skills for planning, debugging, testing, reviewing, and writing
-- A library of single-rule principles, indexed by the `router` skill
+- A `router` skill that matches a task to one of a few playbooks
 - A few subagents the skills spawn when a task needs a second pair of eyes
 
 ### ✦ What it is not

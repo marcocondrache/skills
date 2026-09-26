@@ -10,6 +10,6 @@
 6. Iterate. A load that misfires means the description is wrong. Behavior that misses means the body is wrong. Fix one, re-run step 5, and stop when every trigger and near-miss passes.
 7. Run **Opening a PR**.
 
-When in doubt, delete. Keep only prose that changes a decision. Tell it to do the thing and skip the reason. Explain only when the rule is confusing without one. Match tone to scope. Point at structural sources (types, READMEs, config) per the **encode-lessons-in-structure** principle skill. Delegate to other skills by name or path. Don't restate them. When you keep hitting a workflow that no skill captures, propose a new skill.
+When in doubt, delete. Keep only prose that changes a decision. Tell it to do the thing and skip the reason. Explain only when the rule is confusing without one. Match tone to scope. Point at structural sources (types, READMEs, config) instead of restating them. Delegate to other skills by name or path. Don't restate them. When you keep hitting a workflow that no skill captures, propose a new skill.
 
 **Reply:** summary of the skill, key design decisions, the trigger and near-miss results, validation notes.
