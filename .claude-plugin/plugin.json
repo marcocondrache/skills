@@ -1,0 +1,13 @@
+{
+  "name": "marco",
+  "version": "0.1.0",
+  "description": "Skills, principles, and subagents for planning, debugging, testing, reviewing, and writing.",
+  "author": {
+    "name": "Marco Condrache",
+    "email": "marcomihaicondrache@gmail.com"
+  },
+  "homepage": "https://github.com/marcocondrache/skills",
+  "repository": "https://github.com/marcocondrache/skills",
+  "license": "MIT",
+  "keywords": ["skills", "engineering", "principles", "subagents"]
+}

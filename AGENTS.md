@@ -7,6 +7,7 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 - `skills/<name>/SKILL.md` is one skill. Supporting files sit next to it in `references/` (prompts, templates, rubrics loaded on demand), `playbooks/` (step lists a skill routes to), and `scripts/` (executable tools).
 - `skills/principle-*/` are single-rule principle skills. `skills/router/SKILL.md` indexes them and routes tasks to its playbooks.
 - `agents/*.md` are subagent definitions. `router-agent` wraps `router`, and `comment-sicko` is spawned by the `no-comments` skill.
+- `.claude-plugin/` packages the repo as a Claude Code plugin and marketplace. Skills and agents are discovered from their directories, so adding one needs no manifest change. Bump `version` in `plugin.json` when a change should reach installed copies.
 
 ## Editing skills
 
