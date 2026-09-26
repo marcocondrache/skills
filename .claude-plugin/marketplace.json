@@ -1,6 +1,6 @@
 {
   "name": "marcocondrache",
-  "description": "Marco's agent skills, principles, and subagents.",
+  "description": "Marco's agent skills and subagents.",
   "owner": {
     "name": "Marco Condrache",
     "email": "52580954+marcocondrache@users.noreply.github.com"
@@ -9,7 +9,7 @@
     {
       "name": "marco",
       "source": "./",
-      "description": "Skills, principles, and subagents for planning, debugging, testing, reviewing, and writing."
+      "description": "Skills and subagents for planning, debugging, testing, reviewing, and writing."
     }
   ]
 }

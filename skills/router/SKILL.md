@@ -1,6 +1,6 @@
 ---
 name: router
-description: Agent style for concise, detailed responses, deliberate subagents, unslopped prose, simple code, and verified work. Routes a task to its playbook and principles. Use for /router, or requests to work in this style.
+description: Agent style for concise, detailed responses, deliberate subagents, unslopped prose, simple code, and verified work. Routes a task to its playbook. Use for /router, or requests to work in this style.
 disable-model-invocation: true
 ---
 
@@ -10,11 +10,13 @@ Match the task to a playbook below, open its file, and follow it. The rules in t
 
 ## Non-negotiables
 
-- **Principles.** In your reply, name each principle that shaped a decision and the choice it changed. Cite only principles whose leaf skill you read this session.
-- **Code.** Name the data shape before writing logic, and pick its structure per **principle-model-the-domain**.
+- **Code.** Name the data shape before writing logic. Encode the domain in a structure (a state machine, a typed model, a lookup table, a discriminated union) instead of scattered conditionals, unless the code is already clear and local.
+- **Size.** Make the smallest change that solves the problem, and delete before you add. Add no compatibility shims. Migrate every caller and delete the old API in the same change.
+- **Debugging.** Reproduce first, then fix the root cause. Don't add a guard that silences the symptom.
+- **Tests.** A test calls the code the way its users do and asserts a literal expected value. If it would still pass with every imported function returning `undefined`, rewrite the assertion or delete the test.
 - **Prose.** Every prose surface follows the **unslop** skill, your reply included. Write it clean as you draft, because a cleanup pass afterward misses the patterns. Docs, RFCs, and readmes also follow the **technical-writing** skill. PR and commit text follows `playbooks/opening-a-pr.md` instead. Agent-facing prose also follows `playbooks/authoring-a-skill.md`.
 - **Comments.** Keep a code comment only for a non-obvious why. Test and verify scripts get no step-narrating comments, because the assertion or log string names the step. This holds for every file, delegate diffs included.
-- **Verification.** Verify UI, IDE, and CLI work on the real surface with the project's verification skill (`verify-<app>`). If it has none, drive the surface directly and note the gap.
+- **Verification.** Check the real thing before calling work done. Run it and read the actual value, not a proxy, "it compiles", or a subagent's summary. For UI, IDE, and CLI work, use the project's verification skill (`verify-<app>`). If it has none, drive the surface directly and note the gap.
 - **Broken skills.** Fix a skill that breaks mid-task in its own PR. Don't block on it, and don't silently work around it.
 
 ## Autonomy
@@ -47,28 +49,6 @@ Every playbook ends with a reply. The playbook's **Reply** line names its conten
 - Say who the work is for and what changes for them before any implementation detail. Then say what the next owner of the code inherits.
 - Give each claim its evidence or a label (measured, inferred, or guess) in the same sentence. Never hand the human a check you could run.
 - Link only artifacts you produced or read this session. Write PR links as `https://github.com/<owner>/<repo>/pull/<number>`.
-
-## Principles
-
-Each principle is a leaf skill. Read it in full before you apply it.
-
-| When | Principles |
-|---|---|
-| Writing, sizing, or reshaping a change | `principle-laziness-protocol`, `principle-subtract-before-you-add`, `principle-minimize-reader-load` |
-| Any non-trivial work that a tool could do or prove | `principle-build-the-lever` |
-| Choosing types and data structures | `principle-foundational-thinking`, `principle-model-the-domain`, `principle-type-system-discipline` |
-| Adding a requirement to an existing design | `principle-redesign-from-first-principles` |
-| A novel decision with no precedent | `principle-exhaust-the-design-space` |
-| Product, UX, or scope tradeoffs | `principle-experience-first` |
-| Rewrites, migrations, and internal API changes | `principle-outcome-oriented-execution`, `principle-migrate-callers-then-delete-legacy-apis` |
-| Validation, error handling, or framework adapters | `principle-boundary-discipline` |
-| Crashes, retries, or concurrent writers | `principle-make-operations-idempotent`, `principle-separate-before-serializing-shared-state` |
-| Debugging | `principle-fix-root-causes` |
-| Two failed fixes that share one premise | `principle-attack-the-premise` |
-| Tests, and before declaring done | `principle-prove-it-works`, `principle-test-behavior-not-implementation`, `principle-sequence-verifiable-units` |
-| Context filling up | `principle-guard-the-context-window` |
-| Tempted to ask about reversible work | `principle-never-block-on-the-human` |
-| Writing the same instruction a second time | `principle-encode-lessons-in-structure` |
 
 ## Playbooks
 
