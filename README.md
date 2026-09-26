@@ -16,6 +16,12 @@ Started from **[pstack](https://github.com/cursor/plugins)**.
 - A mirror of pstack kept in sync with upstream
 - Tied to one harness, editor, or model
 
+### ✦ Why not pstack
+
+pstack is good, but it's someone else's workflow. It's shaped around how its author works, down to the names, and adopting it meant bending my habits to fit.
+
+It also carries a lot of machinery, like an orchestrator with its own store, a PR watcher CLI, and bootstrap scripts. That's code to install and maintain next to the prose, and I wanted skills that are just Markdown.
+
 ### ✦ Philosophy
 
 An agent does its best work when the rules are few, sharp, and loaded only when they matter. Each skill says when to use it and what changes the decision, and nothing else.
