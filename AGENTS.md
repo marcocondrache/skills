@@ -5,8 +5,8 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 ## Layout
 
 - `skills/<name>/SKILL.md` is one skill. Supporting files sit next to it in `references/` (prompts, templates, rubrics loaded on demand), `playbooks/` (step lists a skill routes to), and `scripts/` (executable tools).
-- `skills/principle-*/` are single-rule principle skills. `skills/poteto-mode/SKILL.md` indexes them and routes tasks to its playbooks.
-- `agents/*.md` are subagent definitions. `poteto-agent` wraps `poteto-mode`, and `comment-sicko` is spawned by the `no-comments` skill.
+- `skills/principle-*/` are single-rule principle skills. `skills/router/SKILL.md` indexes them and routes tasks to its playbooks.
+- `agents/*.md` are subagent definitions. `router-agent` wraps `router`, and `comment-sicko` is spawned by the `no-comments` skill.
 
 ## Editing skills
 
@@ -22,5 +22,5 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 
 - Changing or deleting inherited content is expected. Don't add compatibility shims or keep a skill alive only because pstack has it.
 - Much of the inherited text assumes Cursor. Examples include the `Task` and `AskQuestion` tool names, `~/.cursor/rules`, the `cursor-team-kit` plugin, Cursor's built-in `create-skill`, and model ids like `grok-4.7-xhigh-fast`. Find them with `rg -n 'cursor|Cursor|AskQuestion|grok'`. Don't treat them as requirements when adapting a skill to another harness.
-- When you rename or remove a skill, principle, or playbook, update its entry in `skills/poteto-mode/SKILL.md` and any agent that points at it in the same change.
+- When you rename or remove a skill, principle, or playbook, update its entry in `skills/router/SKILL.md` and any agent that points at it in the same change.
 - Keep `LICENSE` intact. It is MIT and carries both copyright lines.
