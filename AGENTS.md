@@ -12,7 +12,7 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 ## Editing skills
 
 - Frontmatter needs `name` and `description`. The description is the trigger, so write it as when to use the skill, with the phrases a user would type.
-- Keep `disable-model-invocation: true` unless the skill should load on its own. Add `paths` for file-type skills (see `typescript-best-practices`).
+- Keep `disable-model-invocation: true` unless the skill should load on its own. Add `paths` globs for a skill tied to a file type.
 - The directory name is the skill's id. Other skills cite it by that id, so a rename means updating every reference. Find them with `rg -n '<old-name>'`.
 - Delegate to another skill by name or path instead of restating its rules.
 - `unslop` rule numbers are stable ids that other skills cite. Removing a rule leaves a gap in the numbering.

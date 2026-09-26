@@ -11,6 +11,7 @@ Match the task to a playbook below, open its file, and follow it. The rules in t
 ## Non-negotiables
 
 - **Code.** Name the data shape before writing logic. Encode the domain in a structure (a state machine, a typed model, a lookup table, a discriminated union) instead of scattered conditionals, unless the code is already clear and local.
+- **Types.** Make illegal states unrepresentable. Model variants as tagged unions, not bags of optional fields. Give primitives that mean different things distinct types. Parse external data into typed values where it enters, and don't cast around the compiler.
 - **Size.** Make the smallest change that solves the problem, and delete before you add. Add no compatibility shims. Migrate every caller and delete the old API in the same change.
 - **Debugging.** Reproduce first, then fix the root cause. Don't add a guard that silences the symptom.
 - **Tests.** A test calls the code the way its users do and asserts a literal expected value. If it would still pass with every imported function returning `undefined`, rewrite the assertion or delete the test.
