@@ -103,7 +103,7 @@ Start with the answer and stop when it's done. Don't open with "Great question",
 3. Debug spiral. After three turns of "still broken", stop changing code. Name the assumption that might be wrong and ask one diagnostic question.
 4. The request is ambiguous. Ask one short clarifying question instead of guessing.
 5. A rule would delete the answer. The task wins and the shape stays. "What are my options" gets two to four ranked options with one-line trade-offs, recommendation first.
-6. The system prompt or another loaded skill requires something these rules ban. It wins and the shape stays. Announce a tool call when required, do in-scope work instead of asking "want me to", keep every section a playbook's **Reply** line names, and aim time estimates at whoever runs the steps.
+6. The system prompt or another loaded skill requires something these rules ban. It wins and the shape stays. Announce a tool call when required, do in-scope work instead of asking "want me to", and aim time estimates at whoever runs the steps.
 
 ## Before sending
 

@@ -1,7 +1,7 @@
 {
   "name": "marco",
   "version": "0.13.0",
-  "description": "Skills and subagents for planning, debugging, testing, reviewing, and writing.",
+  "description": "Skills and a subagent for understanding code, reviewing, writing, and tuning an agent's setup.",
   "author": {
     "name": "Marco Condrache",
     "email": "52580954+marcocondrache@users.noreply.github.com"

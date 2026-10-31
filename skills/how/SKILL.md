@@ -12,7 +12,7 @@ Answer "how does X work?" at the level a senior engineer needs to start working 
 
 1. Scope the question. If it's ambiguous, state your reading and go on. The user can redirect.
 2. Read the code yourself. Find the entry point (a user action, an API call, a job), follow the call chain function by function, and read the core types. Note where the area meets the rest of the codebase and anything a newcomer would get wrong. Read the implementation instead of guessing from names. If you can't trace a part, say so.
-3. Write the explanation in the format below. Skip this step when `how` runs as part of a change, such as a playbook step before a design or a fix. There you need the understanding, not a write-up.
+3. Write the explanation in the format below. Skip this step when `how` runs as part of a change, such as before a design or a fix. There you need the understanding, not a write-up.
 
 ## Big areas
 

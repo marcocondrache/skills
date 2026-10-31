@@ -9,7 +9,7 @@
     {
       "name": "marco",
       "source": "./",
-      "description": "Skills and subagents for planning, debugging, testing, reviewing, and writing."
+      "description": "Skills and a subagent for understanding code, reviewing, writing, and tuning an agent's setup."
     }
   ]
 }
