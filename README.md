@@ -6,19 +6,7 @@ The repo is personal. It follows how I work and makes no promise of stability to
 
 ## ✦ Skills
 
-| Skill | Use it to |
-| --- | --- |
-| `how` | Explain how a part of the code works before you change it |
-| `why` | Find the reasons behind the code's current shape in git history, PRs, and docs |
-| `sweep` | Review a whole codebase instead of a diff and rank what looks off |
-| `no-comments` | Send the Comment Sicko subagent after needless comments and delete them |
-| `retro` | Look back at a session and change the agent's setup so the next one goes better |
-| `steering` | Decide where an instruction for an agent should live and at what scope |
-| `technical-writing` | Write or review docs, RFCs, and READMEs |
-| `unslop` | Strip AI tells from any writing |
-| `design-eng` | Build or review UI motion and interaction details |
-| `i-have-adhd` | Shape replies for a reader with ADHD, with the next action first |
-| `bro` | Restate the last reply in plain language |
+[INDEX.md](INDEX.md) lists every skill with one line on when to use it.
 
 ## ✦ Inspiration
 

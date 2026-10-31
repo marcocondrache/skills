@@ -24,4 +24,5 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 - Changing or deleting inherited content is expected. Don't add compatibility shims or keep a skill alive only because pstack has it.
 - Keep every skill harness-agnostic. Don't name one harness's tools, paths, plugins, config files, or model ids. Describe the capability instead ("spawn a subagent", "ask the user", "your strongest model", "the project's skills directory").
 - When you rename or remove a skill, update every skill and agent that points at it in the same change.
+- When you add, rename, or remove a skill, update its row in `INDEX.md` in the same change.
 - Keep `LICENSE` intact. It is MIT and carries both copyright lines.
