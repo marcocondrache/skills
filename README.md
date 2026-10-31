@@ -4,7 +4,7 @@ These are the agent skills I use in my main engineering work. Some I run every d
 
 The repo is personal. It follows how I work and makes no promise of stability to anyone else. Take whatever is useful.
 
-## Skills
+## ✦ Skills
 
 | Skill | Use it to |
 | --- | --- |
@@ -20,7 +20,7 @@ The repo is personal. It follows how I work and makes no promise of stability to
 | `i-have-adhd` | Shape replies for a reader with ADHD, with the next action first |
 | `bro` | Restate the last reply in plain language |
 
-## Inspiration
+## ✦ Inspiration
 
 - [pstack](https://github.com/cursor/plugins) by Lauren Tan is where this repo started. `how`, `why`, `no-comments`, `technical-writing`, `unslop`, `bro`, and the Comment Sicko subagent came from it. `how` and `why` are much shorter now, and the rest are close to the original.
 - [mattpocock/skills](https://github.com/mattpocock/skills) is the base for `retro`.
@@ -31,6 +31,6 @@ The repo is personal. It follows how I work and makes no promise of stability to
 
 `sweep` is my own.
 
-## License
+## ✦ License
 
 MIT, see [LICENSE](LICENSE). `design-eng` and `i-have-adhd` keep their original MIT licenses in their own directories.
