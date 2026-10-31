@@ -20,11 +20,9 @@ Read `rules.md` in this skill's directory first. Its rules apply to every playbo
 
 ## Subagents
 
-Spawn `router-agent` for every subagent inside a playbook step. Pass it the task (file paths, the data shape, and success criteria) and the path to `rules.md`. Workflow skills (`how`, `why`, `interrogate`, `swarm`) pick their own subagents and models, so don't override them.
+Spawn `router-agent` for every subagent inside a playbook step. Pass it the task (file paths, the data shape, and success criteria) and the path to `rules.md`. Workflow skills (`how`, `why`) pick their own subagents and models, so don't override them.
 
 Run subagents in the background with write and MCP access, and pass file pointers instead of inlined context. Pick the model by role. Prose, judgment, and the hardest code (cross-cutting design, concurrency, subtle algorithms) go to your strongest model, even when the steps are fully specified. Mechanical code and trivial edits go to a fast model. When the harness can't pick a model per subagent, the subagent runs on the parent model.
-
-For parallel fan-out, use the **swarm** skill (coverage matrices, races, gauntlets, exploration). For design or code bakeoffs, use the **arena** skill.
 
 You own every subagent's work. Review its diff and write your own summary. A resumed subagent silently drops directives, so spawn a fresh one with the consolidated scope instead. A second opinion is the same prompt on a different model, and agreement is high-signal.
 
