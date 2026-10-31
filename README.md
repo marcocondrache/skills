@@ -2,7 +2,7 @@
 
 My personal collection of agent skills, subagents, and rules for high-quality engineering work. Plain Markdown that works with any harness that loads skills.
 
-Started from **[pstack](https://github.com/cursor/plugins)**. The `retro` skill is adapted from **[mattpocock/skills](https://github.com/mattpocock/skills)**, `design-eng` from **[emilkowalski/skills](https://github.com/emilkowalski/skills)**, and `i-have-adhd` from **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)**.
+Started from **[pstack](https://github.com/cursor/plugins)**. The `retro` skill is adapted from **[mattpocock/skills](https://github.com/mattpocock/skills)**, `design-eng` from **[emilkowalski/skills](https://github.com/emilkowalski/skills)**, `i-have-adhd` from **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)**, and `steering` from Anthropic's article **[Steering Claude Code](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)**.
 
 ### ✦ What it is
 

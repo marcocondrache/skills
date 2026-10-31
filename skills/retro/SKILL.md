@@ -31,6 +31,8 @@ Look back at a session and propose changes to the environment the agent worked i
 
 Implementation carries the most context, because that agent explores, writes code, and debugs. Review gets a diff and little else. So coding standards belong in review, not in what implementation loads.
 
+To choose between a steering file, rule, skill, subagent, hook, or permission, follow the `steering` skill.
+
 - Steering files load into every agent's context. Keep them to navigation pointers and the few rules every task needs.
 - Review rules load only at review. Once they pass about 1,000 lines, split them into docs and leave pointers.
 - Docs are reference files something else points to. Look for an existing doc before writing a new one.
