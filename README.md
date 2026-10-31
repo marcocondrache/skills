@@ -1,28 +1,24 @@
 # Skills
 
-My personal collection of agent skills, subagents, and rules for high-quality engineering work. Plain Markdown that works with any harness that loads skills.
+These are the agent skills I use in my main engineering work. Some I run every day, others I'm still testing, and any of them can change or disappear once it stops helping. They're plain Markdown, so any agent harness that loads skills can use them.
 
-Started from **[pstack](https://github.com/cursor/plugins)**. The `retro` skill is adapted from **[mattpocock/skills](https://github.com/mattpocock/skills)**, `design-eng` from **[emilkowalski/skills](https://github.com/emilkowalski/skills)**, `i-have-adhd` from **[ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd)**, and `steering` from Anthropic's article **[Steering Claude Code](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more)**.
+The repo is personal. It follows how I work and makes no promise of stability to anyone else. Take whatever is useful.
 
-### ✦ What it is
+## ✦ Skills
 
-- A set of skills for understanding code, reviewing, writing, and tuning an agent's setup
-- A subagent the `no-comments` skill spawns to hunt down needless comments
+[INDEX.md](INDEX.md) lists every skill with one line on when to use it.
 
-### ✦ What it is not
+## ✦ Inspiration
 
-- A framework or a plugin with its own runtime
-- A mirror of pstack kept in sync with upstream
-- Tied to one harness, editor, or model
+- [pstack](https://github.com/cursor/plugins) by Lauren Tan is where this repo started. `how`, `why`, `no-comments`, `technical-writing`, `unslop`, `bro`, and the Comment Sicko subagent came from it. `how` and `why` are much shorter now, and the rest are close to the original.
+- [mattpocock/skills](https://github.com/mattpocock/skills) is the base for `retro`.
+- [emilkowalski/skills](https://github.com/emilkowalski/skills) is the base for `design-eng`.
+- [ayghri/i-have-adhd](https://github.com/ayghri/i-have-adhd) is the base for `i-have-adhd`.
+- Anthropic's article [Steering Claude Code](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) is the base for `steering`.
+- [Diátaxis](https://diataxis.fr), the [Google developer documentation style guide](https://developers.google.com/style), [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org), and John Kohl's *The Global English Style Guide* are the four layers of `technical-writing`.
 
-### ✦ Why not pstack
+`sweep` is my own.
 
-pstack is good, but it's someone else's workflow. It's shaped around how its author works, down to the names, and adopting it meant bending my habits to fit.
+## ✦ License
 
-It also carries a lot of machinery, like an orchestrator with its own store, a PR watcher CLI, and bootstrap scripts. That's code to install and maintain next to the prose, and I wanted skills that are just Markdown.
-
-### ✦ Philosophy
-
-An agent does its best work when the rules are few, sharp, and loaded only when they matter. Each skill says when to use it and what changes the decision, and nothing else.
-
-The collection is meant to be reshaped. Skills get rewritten, merged, or deleted as the way I work changes, and every one of them stays harness-agnostic so it moves with me.
+MIT, see [LICENSE](LICENSE). `design-eng` and `i-have-adhd` keep their original MIT licenses in their own directories.
