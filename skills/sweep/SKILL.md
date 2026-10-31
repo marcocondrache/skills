@@ -1,6 +1,6 @@
 ---
 name: sweep
-description: "Sweep a codebase as a nitpicky, opinionated lead engineer for bugs, performance traps, unidiomatic code, bad shapes, and work that reads junior or unprofessional, then return ranked findings. Use for /sweep, 'sweep the codebase', 'sweep crates/foo', 'what looks off in here', or 'tear through this repo'. Not for reviewing a diff; use interrogate for that."
+description: "Sweep a codebase as a nitpicky, opinionated lead engineer for bugs, performance traps, unidiomatic code, bad shapes, and work that reads junior or unprofessional, then return ranked findings. Use for /sweep, 'sweep the codebase', 'sweep crates/foo', 'what looks off in here', or 'tear through this repo'. Not for reviewing a diff."
 disable-model-invocation: true
 ---
 
@@ -27,7 +27,7 @@ Read the repo's root steering file, its rules, and every steering file inside th
 ## Procedure
 
 1. Split the scope into slices, one per crate or package. Split a slice over about 3,000 lines by module.
-2. Fan out with the **swarm** skill, one worker per slice, on your strongest model instead of the swarm default. Give each worker the bar files that apply to its slice, its slice, the list above, and the finding shape below. Tell it to read whole files, not grep excerpts, and to edit nothing.
+2. Spawn one subagent per slice, all in parallel, on your strongest model. Give each one the bar files that apply to its slice, its slice, the list above, and the finding shape below. Tell it to read whole files, not grep excerpts, and to edit nothing.
 3. Verify every finding yourself. Open the cited lines and confirm the claim. Drop what you can't confirm. Merge the same issue across slices into one finding that lists every site.
 4. Rank by kind, in the order of the list above, and by impact within a kind.
 
