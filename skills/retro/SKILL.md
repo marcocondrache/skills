@@ -23,7 +23,7 @@ Look back at a session and propose changes to the environment the agent worked i
 - **Review rules.** A mistake got past review. Classify it first. A mechanical violation (a banned API, an import shape, a fixed syntactic pattern, a file-location rule) gets a deterministic check in the repo's linter, a hook, or CI, whichever is cheapest. Write a prose rule only for a judgment call no check could make, like cross-file consistency or matching the surrounding style.
 - **Steering files.** A steering file is large, or holds rules that belong in a check or a review rule. Move them out.
 - **No-ops.** A steering instruction didn't change what the agent did. Delete it.
-- **Skills.** A skill missed a matching request, loaded on one that didn't match, or gave steps the agent ignored or couldn't follow. Or the agent repeated a workflow no skill covers. Fix the description for a load miss and the body for a behavior miss, per `../router/playbooks/authoring-a-skill.md`.
+- **Skills.** A skill missed a matching request, loaded on one that didn't match, or gave steps the agent ignored or couldn't follow. Or the agent repeated a workflow no skill covers. Fix the description for a load miss and the body for a behavior miss.
 - **Tool economy.** A tool call returned far more than the agent needed, or ran many times where once would do. Propose a narrower command, a flag, or a small script.
 - **Information access.** A fact the agent needed wasn't reachable. Propose access to it, like teeing dev server logs to a file or read-only access to a third-party service.
 

@@ -60,9 +60,9 @@ Adapted from Anthropic's article [Steering Claude Code](https://claude.com/resou
 
 ## Skills and subagents
 
-- A skill's description is all the agent sees until it loads. Write it per `../router/playbooks/authoring-a-skill.md`.
+- A skill's description is all the agent sees until it loads. Write it as when to use the skill, with the phrases a user would type.
 - A subagent's body becomes its system prompt and never enters the parent conversation. Only its final message and metadata come back, so ask for that message in the shape you need.
-- Subagents can nest and fan out. Large workflows keep plans and intermediate results in script variables, not in any agent's context. For fan-out patterns, use the **swarm** skill.
+- Subagents can nest and fan out. Large workflows keep plans and intermediate results in script variables, not in any agent's context.
 
 ## System prompt
 

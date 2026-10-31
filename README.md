@@ -6,9 +6,8 @@ Started from **[pstack](https://github.com/cursor/plugins)**. The `retro` skill 
 
 ### ✦ What it is
 
-- A set of skills for planning, debugging, testing, reviewing, and writing
-- A `router` skill that matches a task to one of a few playbooks
-- A few subagents the skills spawn when a task needs a second pair of eyes
+- A set of skills for understanding code, reviewing, writing, and tuning an agent's setup
+- A subagent the `no-comments` skill spawns to hunt down needless comments
 
 ### ✦ What it is not
 

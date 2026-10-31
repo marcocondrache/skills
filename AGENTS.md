@@ -4,9 +4,8 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 
 ## Layout
 
-- `skills/<name>/SKILL.md` is one skill. Supporting files sit next to it in `references/` (prompts, templates, rubrics loaded on demand), `playbooks/` (step lists a skill routes to), and `scripts/` (executable tools).
-- `skills/router/SKILL.md` routes tasks to its playbooks. `skills/router/rules.md` holds the rules every playbook and router subagent follows.
-- `agents/*.md` are subagent definitions. `router-agent` runs one step of a router playbook, and `comment-sicko` is spawned by the `no-comments` skill.
+- `skills/<name>/SKILL.md` is one skill. Supporting files sit next to it in `references/` (prompts, templates, rubrics loaded on demand) and `scripts/` (executable tools).
+- `agents/*.md` are subagent definitions. `comment-sicko` is spawned by the `no-comments` skill.
 - `.claude-plugin/` packages the repo as a Claude Code plugin and marketplace. Skills and agents are discovered from their directories, so adding one needs no manifest change. Bump `version` in `plugin.json` when a change should reach installed copies.
 
 ## Editing skills
@@ -16,6 +15,7 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 - The directory name is the skill's id. Other skills cite it by that id, so a rename means updating every reference. Find them with `rg -n '<old-name>'`.
 - Delegate to another skill by name or path instead of restating its rules.
 - `unslop` rule numbers are stable ids that other skills cite. Removing a rule leaves a gap in the numbering.
+- Test a skill meant to change what an agent does. Give a fresh agent three to five requests that should load it and one or two near-misses that should not. It must load on the first, stay out on the second, and be followed once loaded.
 - Keep only prose that changes a decision. When in doubt, delete.
 - Write every prose file per the `unslop` skill. No em dashes, sentence case headings, no mid-sentence colons, no filler.
 
@@ -23,5 +23,5 @@ This is Marco's personal collection of agent skills, subagents, and rules for hi
 
 - Changing or deleting inherited content is expected. Don't add compatibility shims or keep a skill alive only because pstack has it.
 - Keep every skill harness-agnostic. Don't name one harness's tools, paths, plugins, config files, or model ids. Describe the capability instead ("spawn a subagent", "ask the user", "your strongest model", "the project's skills directory").
-- When you rename or remove a skill or playbook, update its entry in `skills/router/SKILL.md` and any agent that points at it in the same change.
+- When you rename or remove a skill, update every skill and agent that points at it in the same change.
 - Keep `LICENSE` intact. It is MIT and carries both copyright lines.
