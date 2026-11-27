@@ -1,9 +1,10 @@
 ---
-name: pull-requests
-description: "Commit, title, describe, stack, and open a pull request. Use for /pull-requests, 'open a PR', 'write the PR description', 'stack these PRs', 'rebase the stack', or before you write a commit message or open or edit a PR."
+name: ship
+description: "Commit, title, describe, stack, and open a pull request. Use for /ship, 'ship it', 'open a PR', 'write the PR description', 'stack these PRs', or 'rebase the stack'."
+disable-model-invocation: true
 ---
 
-# Pull requests
+# Ship
 
 When the repo documents its own commit or PR conventions, follow those over this skill.
 
