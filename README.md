@@ -1,6 +1,6 @@
 # Skills
 
-These are the agent skills I use in my main engineering work. Some I run every day, others I'm still testing, and any of them can change or disappear once it stops helping. They're plain Markdown, so any agent harness that loads skills can use them.
+These are the agent skills I use in my main engineering work. Some I run every day, others I'm still testing, and any of them can change or disappear once it stops helping. They're written for Claude Code and ship as a plugin. The prose still reads fine to other agents, but the frontmatter, injected context, and hooks only work in Claude Code.
 
 The repo is personal. It follows how I work and makes no promise of stability to anyone else. Take whatever is useful.
 
@@ -17,7 +17,7 @@ The repo is personal. It follows how I work and makes no promise of stability to
 - Anthropic's article [Steering Claude Code](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) is the base for `steering`.
 - [Diátaxis](https://diataxis.fr), the [Google developer documentation style guide](https://developers.google.com/style), [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org), and John Kohl's *The Global English Style Guide* are the four layers of `technical-writing`.
 
-`sweep` is my own.
+`sweep` and `pr` are my own.
 
 ## ✦ License
 
