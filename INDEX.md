@@ -8,6 +8,7 @@
 | [`no-comments`](skills/no-comments/SKILL.md) | Send the Comment Sicko subagent after needless comments and delete them |
 | [`retro`](skills/retro/SKILL.md) | Look back at a session and change the agent's setup so the next one goes better |
 | [`steering`](skills/steering/SKILL.md) | Decide where an instruction for an agent should live and at what scope |
+| [`pull-requests`](skills/pull-requests/SKILL.md) | Write commits, titles, and bodies, stack PRs, and open them |
 | [`technical-writing`](skills/technical-writing/SKILL.md) | Write or review docs, RFCs, and READMEs |
 | [`unslop`](skills/unslop/SKILL.md) | Strip AI tells from any writing |
 | [`design-eng`](skills/design-eng/SKILL.md) | Build or review UI motion and interaction details |
