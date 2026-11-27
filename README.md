@@ -1,6 +1,6 @@
 # Skills
 
-These are the agent skills I use in my main engineering work. Some I run every day, others I'm still testing, and any of them can change or disappear once it stops helping. They're plain Markdown, so any agent harness that loads skills can use them.
+These are the agent skills I use in my main engineering work. Some I run every day, others I'm still testing, and any of them can change or disappear once it stops helping. They're written for Claude Code and ship as a plugin. The prose still reads fine to other agents, but the frontmatter, injected context, and hooks only work in Claude Code.
 
 The repo is personal. It follows how I work and makes no promise of stability to anyone else. Take whatever is useful.
 

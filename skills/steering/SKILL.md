@@ -8,7 +8,7 @@ disable-model-invocation: true
 
 Every way to steer a coding agent trades context cost against authority. Pick the cheapest mechanism that still has the authority the instruction needs, and load it only when it matters.
 
-Adapted from Anthropic's article [Steering Claude Code](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more). The mechanism names below are generic. Map each one to what the target harness calls it.
+Adapted from Anthropic's article [Steering Claude Code](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more). The names below map to Claude Code. A steering file is `CLAUDE.md`, a rule is a file in `.claude/rules/`, and the rest keep their names.
 
 ## Steps
 
