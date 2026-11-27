@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""PreToolUse hook that holds `gh pr create` and `gh pr edit` to the ship skill's title rules."""
+"""PreToolUse hook that holds `gh pr create` and `gh pr edit` to the pr skill's title rules."""
 
 import json
 import re
@@ -69,7 +69,7 @@ def main():
         return
 
     for args in calls:
-        if args[2] == "create" and "--draft" in args:
+        if args[2] == "create" and any(a == "--draft" or a.startswith("--draft=") for a in args):
             deny("Open the PR ready for review. Drop `--draft` and run the command again.")
             return
         title = title_of(args)
@@ -78,7 +78,7 @@ def main():
         problem = problem_with(title)
         if problem:
             deny(
-                f"The PR title `{title}` breaks the ship skill's rules because {problem}. "
+                f"The PR title `{title}` breaks the pr skill's rules because {problem}. "
                 f"Rewrite it as `type(scope): subject` with a lower-case imperative subject and no trailing period, "
                 f"for example `{EXAMPLE}`. If this repo uses a different convention, ask the user how to proceed."
             )

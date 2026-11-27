@@ -1,6 +1,6 @@
 ---
-name: ship
-description: "Commit, title, describe, stack, and open a pull request. Use for /ship, 'ship it', 'open a PR', 'write the PR description', 'stack these PRs', 'rebase the stack', or before you write a commit message or open or edit a PR."
+name: pr
+description: "Use when opening, editing, or stacking a pull request or writing a commit message, as in 'open a PR', 'write the PR description', 'stack these PRs', 'rebase the stack', /pr, or during /ship. Sets the commit, title, and body conventions and opens the PR with gh."
 allowed-tools: Bash(${CLAUDE_SKILL_DIR}/scripts/context.sh) Bash(git status *) Bash(git log *) Bash(git diff *) Bash(git show *) Bash(gh pr view *) Bash(gh pr list *)
 hooks:
   PreToolUse:
@@ -8,13 +8,13 @@ hooks:
       hooks:
         - type: command
           if: Bash(gh pr create *)
-          command: python3 "${CLAUDE_PLUGIN_ROOT}/skills/ship/scripts/check-pr.py"
+          command: python3 "${CLAUDE_PLUGIN_ROOT}/skills/pr/scripts/check-pr.py"
         - type: command
           if: Bash(gh pr edit *)
-          command: python3 "${CLAUDE_PLUGIN_ROOT}/skills/ship/scripts/check-pr.py"
+          command: python3 "${CLAUDE_PLUGIN_ROOT}/skills/pr/scripts/check-pr.py"
 ---
 
-# Ship
+# PR
 
 ## Current state
 
@@ -24,9 +24,9 @@ When the repo lists a contributing guide or PR template above, read it. Its conv
 
 ## Before opening
 
-Read the full diff with `git diff <base>...HEAD`. Delete comments that narrate what the code does and keep only a comment that explains a non-obvious why. Run `unslop` on any prose the diff adds.
+Read the full diff with `git diff <base>...HEAD`. Delete comments that narrate what the code does and keep only a comment that explains a non-obvious why. Apply the `unslop` skill to any prose the diff adds.
 
-Rebase into small, ordered commits. Each commit lands on its own and the order tells the story. Amend when a fix belongs in the commit just made, and add a new commit when the fix is separable.
+Rebase into small, ordered commits. Each commit lands on its own and the order tells the story. Amend when a fix belongs in the commit just made, and add a new commit when the fix is separable. After you rewrite a branch that is already pushed, push it with `git push --force-with-lease`, never `--force`.
 
 ## Size and stacks
 
@@ -60,4 +60,4 @@ Write per `unslop`. Use short declarative sentences, one word for each action, a
 
 Use `gh` to create, edit, view, and merge. Open every PR ready for review, never as a draft. Run `gh pr view <number>` before you state a PR's status.
 
-Opening a PR does not start a watch on it. Post the URL as `https://github.com/<owner>/<repo>/pull/<number>` and continue with the remaining work. Check CI and review threads only when asked.
+Post the URL as `https://github.com/<owner>/<repo>/pull/<number>`. Opening a PR does not start a watch on it, unless the user ran `/ship`, which watches the PR itself. Otherwise continue with the remaining work, and check CI and review threads only when asked.

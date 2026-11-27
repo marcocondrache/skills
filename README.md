@@ -17,7 +17,7 @@ The repo is personal. It follows how I work and makes no promise of stability to
 - Anthropic's article [Steering Claude Code](https://claude.com/resources/articles/steering-claude-code-skills-hooks-rules-subagents-and-more) is the base for `steering`.
 - [Diátaxis](https://diataxis.fr), the [Google developer documentation style guide](https://developers.google.com/style), [ASD-STE100 Simplified Technical English](https://www.asd-ste100.org), and John Kohl's *The Global English Style Guide* are the four layers of `technical-writing`.
 
-`sweep` and `ship` are my own.
+`sweep` and `pr` are my own.
 
 ## ✦ License
 

@@ -32,9 +32,14 @@ git log --format=%s -n 8 "$base" 2>/dev/null
 echo
 echo "Open PR for this branch:"
 if command -v gh >/dev/null 2>&1; then
-  gh pr view --json number,title,url,baseRefName,isDraft,state \
-    --template '#{{.number}} {{.title}} ({{.state}}, base {{.baseRefName}}{{if .isDraft}}, draft{{end}}) {{.url}}{{"\n"}}' 2>/dev/null \
-    || echo "none"
+  if ! pr=$(gh pr view --json number,title,url,baseRefName,isDraft,state \
+    --template '#{{.number}} {{.title}} ({{.state}}, base {{.baseRefName}}{{if .isDraft}}, draft{{end}}) {{.url}}' 2>&1); then
+    case "$pr" in
+      *"no pull requests found"*) pr="none" ;;
+      *) pr="unknown, gh failed: $(printf '%s' "$pr" | head -n 1 | cut -c1-120)" ;;
+    esac
+  fi
+  echo "$pr"
 else
   echo "unknown, gh is not installed"
 fi
